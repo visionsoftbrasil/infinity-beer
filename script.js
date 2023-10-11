@@ -2,36 +2,34 @@ const slides = document.getElementById('container-slides')
 const next = document.getElementById('next')
 const prev = document.getElementById('prev')
 
-let dist = -464
-let counter = 1
+let dist = []
+let counter = 0
+
+for(let i = 0; i < slides.children.length; i++){
+    dist.push(464*i)
+}
+
+console.log(dist)
+
 
 next.addEventListener('click', () => {
-    console.log("PREV NEXT:", dist)
+    counter += 1
     if (counter >= slides.children.length) {
-        slides.style.transform = `translateX(0px)`
-        dist = -464
-        counter = 1
-        console.log("FINAL NEXT:", dist)
+        slides.style.transform = `translateX(${dist[0]}px)`
+        counter = 0
         return
     }
-
-    slides.style.transform = `translateX(${dist}px)`
-    dist-=464
-    counter += 1
-    console.log("FINAL NEXT:", dist)
+    slides.style.transform = `translateX(-${dist[counter]}px)`
 })
 
 prev.addEventListener('click', () => {
-    console.log("PREV PREV:", dist)
-    if (counter == 1) {
-        dist*=3
-        slides.style.transform = `translateX(${dist}px)`
-        counter = 4
-        console.log("FINAL PREV:", dist)
+    if (counter == 0) {
+        slides.style.transform = `translateX(-${dist[dist.length-1]}px)`
+        counter = dist.length-1
         return
     }
-    dist+=464
-    slides.style.transform = `translateX(${dist}px)`
     counter -= 1
-    console.log("FINAL PREV:", dist)
+    console.log(dist, counter)
+    slides.style.transform = `translateX(-${dist[counter]}px)`
+    console.log(dist, counter)
 })
