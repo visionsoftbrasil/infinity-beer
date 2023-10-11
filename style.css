@@ -56,7 +56,7 @@ nav ul li a:hover {
 main {
     display: flex;
     flex-direction: column;
-    background: #3a3a38 url(./bg-drinks.jpg) no-repeat;
+    background: #3a3a38 url(./assets/bg-drinks.jpg) no-repeat;
     background-size: 100%;
 }
 
