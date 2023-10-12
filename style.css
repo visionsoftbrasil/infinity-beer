@@ -255,3 +255,7 @@ footer a {
 footer a:hover {
     text-decoration: underline;
 }
+
+#end{
+    text-decoration: underline;
+}
