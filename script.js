@@ -1,16 +1,34 @@
 const slides = document.getElementById('container-slides')
 const next = document.getElementById('next')
 const prev = document.getElementById('prev')
+const menu = document.getElementById('menu')
+const nav = document.querySelector('nav')
+const img = document.getElementById('header-icon')
+const logoMenu = document.getElementById('logo-menu')
+const xMenu = document.getElementById('x-menu')
+
+let menuOpen = false
 
 let dist = []
 let counter = 0
 
+function handleMenu() {
+    if (!menuOpen) {
+        nav.classList.add('more-width')
+        img.src = "./assets/icons/x.svg"
+    }else {
+        nav.classList.remove('more-width')
+        img.src = "./assets/icons/menu.svg"
+    }
+    menuOpen = !menuOpen
+}
+
+menu.addEventListener("click", handleMenu)
+xMenu.addEventListener('click', handleMenu)
+
 for(let i = 0; i < slides.children.length; i++){
     dist.push(464*i)
 }
-
-console.log(dist)
-
 
 next.addEventListener('click', () => {
     counter += 1

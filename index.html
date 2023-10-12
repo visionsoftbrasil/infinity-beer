@@ -11,19 +11,31 @@
         <div class="logo">
             <img src="./assets/infinity-logo-nobg.png" alt="Logo Infiniy Beer">
         </div>
-        <nav class="main-nav">
-            <ul>
-                <li><a href="#drinks">Drinks</a><div></div></li>
-                <li><a href="#contato">Contato</a><div></div></li>
-                <li><a href="#endereço">Endereço</a><div></div></li>
-                <li><a href="#eventos">Eventos</a><div></div></li>
-            </ul>
-        </nav>
+        <div class="nav">
+            <nav class="main-nav">
+                <ul>
+                    <li>
+                        <div class="logo-menu">
+                            <img src="./assets/infinity-logo-nobg.png" alt="Logo Infiniy Beer">
+                        </div>
+                    </li>
+                    <li><a onclick="handleMenu()" href="#drinks">Drinks</a><div></div></li>
+                    <li><a onclick="handleMenu()"href="#contato">Contato</a><div></div></li>
+                    <li><a onclick="handleMenu()"href="#endereço">Endereço</a><div></div></li>
+                    <li><a onclick="handleMenu()"href="#eventos">Eventos</a><div></div></li>
+                </ul>
+            </nav>
+            <div id="menu" class="header-icon">
+                <img id="header-icon" src="./assets/icons/menu.svg" alt="Hamburger Icon" title="Click me!">
+            </div>
+        </div>
     </header>
     <main>
         <section id="menu" class="drinks">
             <div class="container">
-                <h1 id="eventos" >Eventos</h1>
+                <div class="events">
+                    <h1 id="eventos" >Eventos</h1>
+                </div>
                 <div class="container-events">
                     <div class="scroll-slides">
                         <div id="container-slides" class="container-slides">
@@ -58,7 +70,18 @@
         </section>
     </main>
     <footer>
-
+        <div id="#contato" class="footer-content">
+            <p>© 2023 Infinity Beer. Todos os direitos reservados.</p>
+            <div class="contact-info">
+                <p>E-mail: <a href="mailto:contato@infinitybeer.com">contato@infinitybeer.com</a></p>
+                <p>Telefone: <a href="tel:(XX) XXXX-XXXX">(43)9 2121-2121</a></p>
+            </div>
+            <div class="social-links">
+                <a href="https://www.instagram.com/infinity_beer_ltda" target="_blank" rel="noopener">
+                    <img src="./assets/icons/instagram.svg" alt="Instagram">
+                </a>
+            </div>
+        </div>
     </footer>
     <script src="script.js" type="module"></script>
 </body>
