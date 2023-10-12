@@ -5,7 +5,8 @@ const menu = document.getElementById('menu')
 const nav = document.querySelector('nav')
 const img = document.getElementById('header-icon')
 const logoMenu = document.getElementById('logo-menu')
-const xMenu = document.getElementById('x-menu')
+const width = window.innerWidth
+const height = window.innerHeight
 
 let menuOpen = false
 
@@ -24,10 +25,9 @@ function handleMenu() {
 }
 
 menu.addEventListener("click", handleMenu)
-xMenu.addEventListener('click', handleMenu)
 
 for(let i = 0; i < slides.children.length; i++){
-    dist.push(464*i)
+    dist.push((width+32)*i)
 }
 
 next.addEventListener('click', () => {
