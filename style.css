@@ -1,6 +1,7 @@
 
 :root {
-    --black: #252523
+    --black: #252523;
+    scroll-behavior: smooth;
 }
 
 * {
@@ -24,6 +25,8 @@ header {
     position: fixed;
     z-index: 1;
     width: 100vw;
+    min-height: 10vh;
+    max-height: 10vh;
 }
 
 header .logo img {
@@ -105,21 +108,27 @@ nav ul a {
 main {
     display: flex;
     flex-direction: column;
-    background: #3a3a38 url(./assets/bg-drinks.jpg) no-repeat center;
-    background-size: cover;
+    background: #3a3a38
 }
 
 main section {
     display: flex;
     flex-direction: column;
     width: 100vw;
-}
-
-main section:nth-of-type(1){
     min-height: 100vh;
 }
 
-main section:nth-of-type(1) h1{
+main section:nth-of-type(1){
+    background: #3a3a38 url(./assets/bg-drinks.jpg) no-repeat center;
+    background-size: cover;
+}
+
+main section:nth-of-type(2){
+    background: #3a3a38 url(./assets/bg-drinks2.jpg) no-repeat center;
+    background-size: cover;
+}
+
+main section h1{
     text-align: center;
     font-size: 4rem;
     color: rgb(255, 196, 0);
@@ -129,7 +138,8 @@ main section:nth-of-type(1) h1{
 
 .events {
     display: flex;
-    height: calc(50%);
+    min-height: 20vh;
+    max-height: 20vh;
     align-items: last baseline;
     justify-content: center;
 }
@@ -167,7 +177,7 @@ main section:nth-of-type(1) h1{
 
 .container-events .div-buttons button{
     transition: .2s;
-    padding: 1rem 3rem;
+    padding: 1rem 2rem;
     border: none;
     background: rgba(255, 255, 255, 0.349);
     border-radius: 1rem;
@@ -219,6 +229,53 @@ main section:nth-of-type(1) h1{
     width: 100%;
     filter: drop-shadow(5px 5px 5px #1b1b1bbd);
 }  
+
+.container-drinks {
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.container-drinks .card {
+    display: flex;
+    padding: 1rem .5rem;
+    background: rgba(255, 199, 95, 0.144);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.548);
+    border-top: 1px solid rgba(255, 255, 255, 0.548);
+}
+
+.container-drinks .card .img {
+    width: 30%
+}
+
+.container-drinks .card .img img {
+    width: 100%
+}
+
+.container-drinks .card .name {
+    color: rgb(255, 196, 0);
+    text-shadow: 3px 3px 1px rgba(0,0,0,0.55);
+    letter-spacing: .2rem;
+    font-weight: bolder;
+    font-size: 2rem;
+    display: flex;
+    height: 100%;
+    align-items: center
+}
+
+.container-drinks .card .name:hover {
+    cursor: pointer;
+}
+
+.container-drinks .card .name span {
+    margin: 1rem;
+}
+
+.container-drinks .card .desc {
+    display: none;
+}
 
 
 footer {

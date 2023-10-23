@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,22 +7,24 @@
     <title>Infinity Beer</title>
 </head>
 <body>
+    <script>
+
+    </script>
     <header>
         <div class="logo">
             <img src="./assets/infinity-logo-nobg.png" alt="Logo Infiniy Beer">
         </div>
         <div class="nav">
             <nav class="main-nav">
-                <ul>
+                <ul id="ul">
                     <li>
                         <div class="logo-menu">
                             <img src="./assets/infinity-logo-nobg.png" alt="Logo Infiniy Beer">
                         </div>
                     </li>
-                    <li><a onclick="handleMenu()" href="#drinks">Drinks</a><div></div></li>
-                    <li><a onclick="handleMenu()" href="#contato">Contato</a><div></div></li>
-                    <li><a onclick="handleMenu()" href="#endereço">Endereço</a><div></div></li>
-                    <li><a onclick="handleMenu()" href="#eventos">Eventos</a><div></div></li>
+                    <li><a href="#eventos">Eventos</a></li>
+                    <li><a href="#drinks">Drinks</a></li>
+                    <li><a href="#contato">Contato</a></li>
                 </ul>
             </nav>
             <div id="menu" class="header-icon">
@@ -62,12 +64,76 @@
         </section>
         <section class="drinks">
             <div class="container">
-                
+                <div id="drinks" class="events">
+                    <h1>DRINKS</h1>
+                </div>
+                <div class="container-drinks">
+                    <div class="card">
+                        <div class="img">
+                            <img src="./assets/drinks/vir.png" alt="Virgin Drink">
+                        </div>
+                        <div class="name">
+                            <span>Virgin</span>
+                        </div>
+                        <div class="desc">
+                            <div class="price">
+                                <span> 500ml R$5,00 </span>
+                                <span> 750ml R$8,00 </span>
+                            </div>
+                            <div class="ingredients">
+                                <span>Limão, leite condensado e gelo de limão</span>
+                            </div>
+                            <div class="phrase">
+                                <span>"Sabor cítrico, alegria imediata"</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="img">
+                            <img src="./assets/drinks/lov.png" alt="Virgin Drink">
+                        </div>
+                        <div class="name">
+                            <span>Love</span>
+                        </div>
+                        <div class="desc">
+                            <div class="price">
+                                <span> 500ml R$5,00 </span>
+                                <span> 750ml R$8,00 </span>
+                            </div>
+                            <div class="ingredients">
+                                <span>Morango, leite condensado e gelo de morango</span>
+                            </div>
+                            <div class="phrase">
+                                <span>"Drinks e delícias para compartilhar: o amor está no copo!"</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="img">
+                            <img src="./assets/drinks/bub.png" alt="Virgin Drink">
+                        </div>
+                        <div class="name">
+                            <span>Babaloo</span>
+                        </div>
+                        <div class="desc">
+                            <div class="price">
+                                <span> 500ml R$5,00 </span>
+                                <span> 750ml R$8,00 </span>
+                            </div>
+                            <div class="ingredients">
+                                <span>Fanta uva, leite condensado, Powerade sabor blueberry</span>
+                            </div>
+                            <div class="phrase">
+                                <span>"Babaloo: o ritmo dos sabores em cada gole"</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
-    <footer>
-        <div id="#contato" class="footer-content">
+    <footer id="#contato">
+        <div class="footer-content">
             <p>© 2023 Infinity Beer. Todos os direitos reservados.</p>
             <div class="contact-info">
                 <h3>Agende seu horário conosco!</h3>

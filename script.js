@@ -5,6 +5,8 @@ const menu = document.getElementById('menu')
 const nav = document.querySelector('nav')
 const img = document.getElementById('header-icon')
 const logoMenu = document.getElementById('logo-menu')
+const li = document.querySelectorAll('li')
+const card = document.getElementsByClassName('card')
 const width = window.innerWidth
 const height = window.innerHeight
 
@@ -24,7 +26,34 @@ function handleMenu() {
     menuOpen = !menuOpen
 }
 
+function handleCard(e){
+    let me = e.target
+    if (me.classList[0] !== 'card') me = me.parentNode
+    if (me.classList[0] !== 'card') me = me.parentNode
+    let desc = me.children[2]
+
+    console.log(desc)
+    desc.style.display = 'flex'
+}
+
 menu.addEventListener("click", handleMenu)
+
+window.addEventListener('load', () => {
+    let values = []
+
+    for(let i in li){
+        if (typeof li[i] == 'object')
+        li[i].addEventListener('click', handleMenu)
+    }
+
+    for(let i in card){
+        if (typeof card[i] == 'object') {
+            card[i].addEventListener('click', handleCard)
+            card[i].id = i
+            values.push(false)
+        }
+    }
+})
 
 for(let i = 0; i < slides.children.length; i++){
     dist.push((width+32)*i)
