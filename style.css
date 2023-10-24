@@ -231,7 +231,7 @@ main section h1{
 }  
 
 .container-drinks {
-    height: 80%;
+    min-height: 80%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -239,11 +239,13 @@ main section h1{
 
 .container-drinks .card {
     display: flex;
+    flex-direction: column;
     padding: 1rem .5rem;
     background: rgba(255, 199, 95, 0.144);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.548);
     border-top: 1px solid rgba(255, 255, 255, 0.548);
+    transition: height .5s ease;
 }
 
 .container-drinks .card .img {
@@ -265,6 +267,10 @@ main section h1{
     align-items: center
 }
 
+.container-drinks .card .container-1{
+    display: flex;
+}
+
 .container-drinks .card .name:hover {
     cursor: pointer;
 }
@@ -273,8 +279,46 @@ main section h1{
     margin: 1rem;
 }
 
+@keyframes heighting {
+    from {
+        transform: scaleY(0)
+    }
+    to {
+        transform: scaleY(1)
+    }
+}
+
 .container-drinks .card .desc {
-    display: none;
+
+    border-top: 1px solid white;
+    padding: 1rem .5rem;
+    animation: heighting .5s ease;
+    transform-origin: top;
+}
+
+.container-drinks .card .desc .container-desc{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    color: white
+}
+
+.container-drinks .card .desc .container-desc div{ 
+    margin: 0 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-drinks .card .desc .container-desc div:nth-child(1){
+    margin: 0 auto;
+    border: 1px solid white;
+    padding: .5rem;
+    border-radius: 1rem;
+    font-size: 1.2rem;
+}
+
+.container-drinks .card .desc .container-desc div:nth-child(3){
+    font-style: italic;
 }
 
 

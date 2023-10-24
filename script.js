@@ -10,6 +10,7 @@ const card = document.getElementsByClassName('card')
 const width = window.innerWidth
 const height = window.innerHeight
 
+let values = []
 let menuOpen = false
 
 let dist = []
@@ -17,7 +18,7 @@ let counter = 0
 
 function handleMenu() {
     if (!menuOpen) {
-        nav.classList.add('more-width')
+        nav.classList.add('more-width')     
         img.src = "./assets/icons/x.svg"
     }else {
         nav.classList.remove('more-width')
@@ -30,17 +31,22 @@ function handleCard(e){
     let me = e.target
     if (me.classList[0] !== 'card') me = me.parentNode
     if (me.classList[0] !== 'card') me = me.parentNode
-    let desc = me.children[2]
-
-    console.log(desc)
-    desc.style.display = 'flex'
+    if (me.classList[0] !== 'card') me = me.parentNode
+    let desc = me.children[1]
+    if (!values[me.id]) {
+        desc.hidden = values[me.id]
+        values[me.id] = !values[me.id]
+        desc.scrollIntoView({block: 'center'})
+        return
+    }
+    desc.scrollIntoView({block: 'center'})
+    desc.hidden = values[me.id]
+    values[me.id] = !values[me.id]
 }
 
 menu.addEventListener("click", handleMenu)
 
 window.addEventListener('load', () => {
-    let values = []
-
     for(let i in li){
         if (typeof li[i] == 'object')
         li[i].addEventListener('click', handleMenu)
