@@ -7,6 +7,9 @@ const img = document.getElementById('header-icon')
 const logoMenu = document.getElementById('logo-menu')
 const li = nav.querySelectorAll('li')
 const card = document.getElementsByClassName('card')
+const ev = document.getElementById('eventos')
+const drinks = document.getElementById('drinks')
+const header = document.querySelector('header')
 const width = window.innerWidth
 const height = window.innerHeight
 
@@ -15,6 +18,11 @@ let menuOpen = false
 
 let dist = []
 let counter = 0
+
+console.log(ev)
+
+ev.style.height = header.offsetHeight*2+'px'
+drinks.style.height = header.offsetHeight*2+'px'
 
 function handleMenu() {
     if (!menuOpen) {
