@@ -108,7 +108,7 @@ nav ul a {
     font-size: 1.2rem;
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 887px) {
     header {
         position: fixed;
         max-height: none;
@@ -645,4 +645,58 @@ footer a:hover {
 
 .img-visao img{
     width: 20%
+}
+
+@media screen and (min-width: 480px) {
+    .sobre {
+        display: grid;
+        place-items: center;
+        grid-template-areas: 
+        "a a c"
+        "a a c"
+        "e e b"
+        "e e d";
+        padding: 0;
+        gap: 1rem;
+        background:#3a3a38;
+    }
+    
+    .sobre .container-sobre {
+        width: 100%;
+        height: 100%
+    }
+
+    .missao {
+        grid-area: a;
+    }
+
+    .visao {
+        grid-area: c;
+    }
+
+    .sobre-nos {
+        grid-area: b;
+    }
+
+    .obs {
+        grid-area: d;
+    }
+
+    .valores {
+        grid-area: e;
+    }
+
+    .sobre ul {
+        display: flex;
+        gap: 1rem
+    }
+    .sobre ul li {
+        border-bottom: 0px
+    }
+
+    .sobre ul li:nth-of-type(2) {
+        padding: 0 1rem;
+        border-right: 4px dashed var(--yellow);
+        border-left: 4px dashed var(--yellow)
+    }
 }
