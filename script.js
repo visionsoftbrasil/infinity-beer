@@ -4,6 +4,7 @@ const prev = document.getElementById('prev')
 const menu = document.getElementById('menu')
 const nav = document.querySelector('nav')
 const img = document.getElementById('header-icon')
+const imgEvent = slides.querySelectorAll('img')
 const logoMenu = document.getElementById('logo-menu')
 const li = nav.querySelectorAll('li')
 const card = document.getElementsByClassName('card')
@@ -18,8 +19,6 @@ let menuOpen = false
 
 let dist = []
 let counter = 0
-
-console.log(ev)
 
 ev.style.height = header.offsetHeight*2+'px'
 drinks.style.height = header.offsetHeight*2+'px'
@@ -70,7 +69,7 @@ window.addEventListener('load', () => {
 })
 
 for(let i = 0; i < slides.children.length; i++){
-    dist.push((width+32)*i)
+    dist.push((imgEvent[0].offsetWidth+64)*i)
 }
 
 next.addEventListener('click', () => {
