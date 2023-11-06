@@ -66,9 +66,11 @@ window.addEventListener('load', () => {
             values.push(false)
         }
     }
+
+    for(let i = 0; i < slides.children.length; i++){
+        dist.push((imgEvent[0].offsetWidth+64)*i)
+    }
 })
-
-
 
 next.addEventListener('click', () => {
     counter += 1
@@ -87,7 +89,5 @@ prev.addEventListener('click', () => {
         return
     }
     counter -= 1
-    console.log(dist, counter)
     slides.style.transform = `translateX(-${dist[counter]}px)`
-    console.log(dist, counter)
 })
