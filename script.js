@@ -20,6 +20,13 @@ let menuOpen = false
 let dist = []
 let counter = 0
 
+let auto = true
+
+const interval = setInterval(() => {
+    if (auto) nextSlide() 
+    else return
+}, 3000)
+
 ev.style.height = header.offsetHeight*2+'px'
 drinks.style.height = header.offsetHeight*2+'px'
 
@@ -73,6 +80,26 @@ window.addEventListener('load', () => {
 })
 
 next.addEventListener('click', () => {
+    nextSlide()
+    auto = false
+    setTimeout(() => {
+        if (auto) {
+            return
+        }else auto = true
+    }, 5000)
+})
+
+prev.addEventListener('click', () => {
+    prevSlide()
+    auto = false
+    setTimeout(() => {
+        if (auto) {
+            return
+        }else auto = true
+    }, 5000)
+})
+
+function nextSlide(){
     counter += 1
     if (counter >= slides.children.length) {
         slides.style.transform = `translateX(${dist[0]}px)`
@@ -80,9 +107,9 @@ next.addEventListener('click', () => {
         return
     }
     slides.style.transform = `translateX(-${dist[counter]}px)`
-})
+}
 
-prev.addEventListener('click', () => {
+function prevSlide(){
     if (counter == 0) {
         slides.style.transform = `translateX(-${dist[dist.length-1]}px)`
         counter = dist.length-1
@@ -90,4 +117,4 @@ prev.addEventListener('click', () => {
     }
     counter -= 1
     slides.style.transform = `translateX(-${dist[counter]}px)`
-})
+}
