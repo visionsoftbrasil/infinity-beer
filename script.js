@@ -27,8 +27,8 @@ const interval = setInterval(() => {
     else return
 }, 3000)
 
-ev.style.height = header.offsetHeight*2+'px'
-drinks.style.height = header.offsetHeight*2+'px'
+ev.style.height = header.offsetHeight*1.5+'px'
+drinks.style.height = header.offsetHeight*1.5+'px'
 
 function handleMenu() {
     if (!menuOpen) {
